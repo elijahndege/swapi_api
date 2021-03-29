@@ -31,27 +31,6 @@ export class ConfigService {
         return Number(this.env.APP_PORT);
     }
 
-    get redisHost(): string {
-        return String(this.env.REDIS_HOST);
-    }
-
-    get redisPort(): number {
-        return Number(this.env.REDIS_PORT);
-    }
-
-    getRedisOptions(
-        enableOffline = true,
-        db = 0,
-    ): RedisOptions {
-        return {
-            host: this.redisHost,
-            port: this.redisPort || 6379,
-            db: db,
-            enableOfflineQueue: enableOffline,
-            enableReadyCheck: true,
-        };
-    }
-
     get baseFolder(): string {
         const regex = /shared+(\/|\\)+services/gi;
         return __dirname.replace(regex, '');

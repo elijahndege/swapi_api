@@ -1,7 +1,6 @@
 import { Module, Global } from '@nestjs/common';
 import { ConfigService } from './services/config.service';
 import { BaseConfigService } from './services/base-config.service';
-import { RedisService } from './services/redis.service';
 
 
 
@@ -11,7 +10,6 @@ import { RedisService } from './services/redis.service';
     providers: [
         BaseConfigService,
         ConfigService,
-        RedisService,
         {
             provide: 'CONFIG_OPTIONS',
             useFactory: (baseConfigService: BaseConfigService) =>
@@ -19,6 +17,6 @@ import { RedisService } from './services/redis.service';
             inject: [BaseConfigService],
         },
     ],
-    exports: [ConfigService, RedisService]
+    exports: [ConfigService]
 })
 export class SharedModule { }

@@ -19,10 +19,4 @@ export class EnvVariables {
     @(Joi.number().default(3000))
     APP_PORT: number;
 
-    @(Joi.string().required())
-    REDIS_HOST: string;
-
-    @(Joi.number().required().default(6397))
-    REDIS_PORT: number;
-
 }

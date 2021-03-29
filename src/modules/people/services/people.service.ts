@@ -2,7 +2,6 @@ import { HttpService, Injectable } from "@nestjs/common";
 import { Planet } from "../../../modules/planet/models/planet.model";
 import { ConfigService } from "../../../shared/services/config.service";
 import { People } from "../models/people.models";
-import { RedisService } from "../../../shared/services/redis.service";
 import { PeopleRes } from "../interfaces/people.interface";
 
 @Injectable()
